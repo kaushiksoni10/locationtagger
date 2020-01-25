@@ -14,7 +14,15 @@ setuptools.setup(
     url="https://github.com/kaushiksoni10/locationtagger",
     packages= ["locationtagger"],
     include_package_data=True,
-    scripts=['locationtagger/bin/locationtagger-nltk-spacy'],
+    scripts=[
+        'locationtagger/bin/locationtagger-nltk-spacy',
+        'locationtagger/tests/__init__.py',
+        'locationtagger/tests/test_LocationExtractor.py',
+        'locationtagger/tests/test_NamedEntityExtractor.py'
+    ],
+    package_data = {
+        'locationtagger': ['data/*.csv']
+    },
     license='MIT',
     install_requires=[
         'nltk',
@@ -25,8 +33,8 @@ setuptools.setup(
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
-        "Natural Language :: English"
-        "Topic :: Text Processing"
+        "Natural Language :: English",
+        "Topic :: Text Processing",
         "Operating System :: OS Independent"
     ],
     python_requires='>=3.5'
