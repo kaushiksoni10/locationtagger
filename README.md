@@ -1,14 +1,15 @@
 # locationtagger
 **version 1.0.0**
 
-Detect and extract locations (Countries, Regions/States & Cities) from text or URL also find relationships among country, regions & cities.
+Detect and extract locations (Countries, Regions/States & Cities) from text or URL. Also, find relationships among countries, regions & cities.
 
 ---
 ## About Project
-In the field of [Natural Lauguage Processing](https://en.wikipedia.org/wiki/Natural_language_processing), many algorithms have been derived for different types of syntactic & semantic analyis of the textual data. NER ([Named Entity Recognition](https://en.wikipedia.org/wiki/Named-entity_recognition)) is one of the best & frequently needed tasks in real-world problems of text mining that follows some grammer-based rules & statistical modelling approaches. An entity extracted from NER can be a name of person, place, organization or product. [locationtagger](https://github.com/kaushiksoni10/locationtagger) is a further process of filter out place names (locations) amongst all the entities found with NER.
+In the field of [Natural Lauguage Processing](https://en.wikipedia.org/wiki/Natural_language_processing), many algorithms have been derived for different types of syntactic & semantic analysis of the textual data. NER ([Named Entity Recognition](https://en.wikipedia.org/wiki/Named-entity_recognition)) is one of the best & frequently needed tasks in real-world problems of text mining that follows some grammer-based rules & statistical modelling approaches. An entity extracted from NER can be a name of person, place, organization or product. [locationtagger](https://github.com/kaushiksoni10/locationtagger) is a further process of tagging & filter out place names (locations) amongst all the entities found with NER.
 
-Aapoach followed is given below in the picture;
+Approach followed is given below in the picture;
 
+![Approach](locationtagger/data/diagram.jpg)
 
 ---
 ## Install and Setup
@@ -28,11 +29,14 @@ But before we install the package, we need to install some useful libraries give
 
 `pycountry`
 
-After installing these package, there are some important nltk & spacy modules that need to be downloaded using commands given in `/locationtagger/bin/locationtagger-nltk-spacy` on IPython shell or Jupyter notebook.
+After installing these packages, there are some important nltk & spacy modules that need to be downloaded using commands given in `/locationtagger/bin/locationtagger-nltk-spacy` on IPython shell or Jupyter notebook.
 
 ---
 ## Usage
 After proper installation of the package, import the module and give some text/URL as input;
+
+### Text as input
+
 
 ```python
 import locationtagger
@@ -60,7 +64,7 @@ entities.cities
 `['Ellsworth', 'Red Wing', 'Blue Earth', 'Chippewa Falls', 'Menomonie']`
 
 \
-Apart from above places extracted from the text, we can also find the countries where these extracted `cities`, `regions` belong to like below,
+Apart from above places extracted from the text, we can also find the countries where these extracted `cities`, `regions` belong to,
 
 ```python
 entities.country_regions
@@ -115,15 +119,15 @@ entities.other_regions
  'Iowa']`
  
 \
- Whatever words nltk & spacy both grabbed from the original text as [named entity](https://en.wikipedia.org/wiki/Named_entity) , most of them stored in `cities`, `regions` & `countries`. But the remaining words (not recognized as place name) will be stored in `other`.
+ Whatever words nltk & spacy both grabbed from the original text as [named entity](https://en.wikipedia.org/wiki/Named_entity) , most of them are stored in `cities`, `regions` & `countries`. But the remaining words (not recognized as place name) will be stored in `other`.
  
  ```python
  entities.other
  ```
- `['winter', 'PM', 'Chippewa']`
- 
-\
-Similarly, It can grab places from **urls** too, 
+ `['winter', 'PM', 'Chippewa']` 
+
+### URL as Input 
+Similarly, It can grab places from urls too, 
 
 ```python
 URL = 'https://edition.cnn.com/2020/01/14/americas/staggering-number-of-human-rights-defenders-killed-in-colombia-the-un-says/index.html'
