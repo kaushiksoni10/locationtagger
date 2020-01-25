@@ -9,7 +9,7 @@ In the field of [Natural Lauguage Processing](https://en.wikipedia.org/wiki/Natu
 
 Approach followed is given below in the picture;
 
-![Approach](locationtagger/data/diagram.jpg)
+![Approach](https://github.com/kaushiksoni10/locationtagger/locationtagger/data/diagram.jpg)
 
 ---
 ## Install and Setup
