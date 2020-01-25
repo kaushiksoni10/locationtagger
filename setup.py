@@ -21,7 +21,7 @@ setuptools.setup(
         'locationtagger/tests/test_NamedEntityExtractor.py'
     ],
     package_data = {
-        'locationtagger': ['data/*.csv']
+        'locationtagger': ['data/*.csv', 'data/*.jpg']
     },
     license='MIT',
     install_requires=[
